@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // EEscreva uma função que dado um total de anos de estudo retorna o quão experiente o usuário é:
+    // De 0-1 ano: Iniciante
+    // De 1-3 anos: Intermediário
+    // De 3-6 anos: Avançado
+    // De 6 acima: Jedi Master
+
+    function experiencia(anos) {
+      var n = anos;
+      if (n < 0) {
+        console.log('Valor inválido')
+      } else if (n >= 0 && n < 1) {
+        console.log('Iniciante')
+      } else if (n >= 1 && n < 3) {
+        console.log('Valor inválido')
+      } else if (n >= 3 && n < 6) {
+        console.log('Avançado')
+      } else {
+        console.log('Jedi Master')
+      }
+    }
+    
+    var anosEstudo = 4;
+    experiencia(anosEstudo);
+
+  </script>
+</body>
+</html>
