@@ -16,7 +16,6 @@
     var btnElement = document.querySelector('#btn');
     var boxesElement = document.querySelector('#boxes');
 
-
     btnElement.onclick = function() {
       var boxElement = document.createElement('div');
 
@@ -24,9 +23,23 @@
       boxElement.style.height = '100px';
       boxElement.style.backgroundColor = '#f00';
 
+      boxElement.onmouseover = function() {
+        boxElement.style.backgroundColor = getRandomColor();
+      };
+
       boxesElement.appendChild(boxElement); 
     };
     
+    function getRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+
+
   </script>
 </body>
 </html>
