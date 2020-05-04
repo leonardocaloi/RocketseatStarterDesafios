@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3 - Módulo 2 - Curso JavaScript</title>
+</head>
+<body>
+  
+  <div id="app">
+    <ul id="list"></ul>
+  </div>
+
+  <script>
+    var nomes = ['Diego', 'Gabriel', 'Lucas'];
+    var listElement = document.querySelector('#list');
+
+    for (nome of nomes) {
+      var liElement = document.createElement('li');
+      var textElement = document.createTextNode(nome);
+
+      liElement.appendChild(textElement);
+      listElement.appendChild(liElement);
+    }
+  </script>
+</body>
+</html>
