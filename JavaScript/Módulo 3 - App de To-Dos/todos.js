@@ -13,9 +13,19 @@ function renderToDos() {
 
   for (ToDo of ToDos) {
     var ToDoElement = document.createElement('li');
-    var ToDoText = document.createTextNode(ToDo);
+    var ToDoText = document.createTextNode(ToDo + ' ');
+    var linkElement = document.createElement('a');
+    var linkText = document.createTextNode('Excluir');
+
+    linkElement.setAttribute('href', '#');
+
+    var pos = ToDos.indexOf(ToDo);
+    linkElement.setAttribute('onclick', 'deleteToDo('+pos+')');
+
     ToDoElement.appendChild(ToDoText);
     listElement.appendChild(ToDoElement);
+    linkElement.appendChild(linkText);
+    ToDoElement.appendChild(linkElement);
   }
 }
 
@@ -29,3 +39,8 @@ function addToDo() {
 }
 
 buttonElement.onclick = addToDo;
+
+function deleteToDo(pos) {
+  ToDos.splice(pos, 1);
+  renderToDos();
+}
